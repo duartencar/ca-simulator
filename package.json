@@ -1,0 +1,29 @@
+{
+  "name": "ca-simulator",
+  "version": "0.0.1",
+  "description": "A single page web app to simulate portuguese savings certificate earnings.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duartencar/ca-simulator.git"
+  },
+  "keywords": [
+    "nextjs",
+    "react",
+    "finance"
+  ],
+  "author": "Duarte Carvalho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duartencar/ca-simulator/issues"
+  },
+  "homepage": "https://github.com/duartencar/ca-simulator#readme",
+  "dependencies": {
+    "next": "^13.0.3",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^4.3.1"
+  }
+}
