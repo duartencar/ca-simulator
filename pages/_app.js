@@ -8,6 +8,11 @@ function MyApp({ Component, pageProps }) {
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>Simulador Certificado de Aforro</title>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+                <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap" rel="stylesheet" />
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3931171896983486"
+                    crossOrigin="anonymous"></script>
                 {/* <link rel="icon" type="image/png" href="favicon.png"/>
                 <meta property="og:title" content='Impac&apos;tu' />
                 <meta property="og:url" content='https://www.impactu.org' />

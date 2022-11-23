@@ -1,7 +1,7 @@
 module.exports = {
-    reactStrictMode: true,
+    reactStrictMode: false,
     distDir: 'build',
     images: {
-      deviceSizes: [480, 768, 1080],
+        deviceSizes: [480, 768, 1080],
     }
 }
