@@ -1,20 +1,18 @@
-import { Line } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
     CategoryScale,
     LinearScale,
-    PointElement,
-    LineElement,
     Title,
     Tooltip,
     Legend,
+    BarElement
 } from 'chart.js';
 
 ChartJS.register(
     CategoryScale,
     LinearScale,
-    PointElement,
-    LineElement,
+    BarElement,
     Title,
     Tooltip,
     Legend
@@ -32,33 +30,36 @@ const options = {
         },
         title: {
             display: true,
-            text: 'Evolução do valor total',
+            text: 'Evolução dos Juros',
             font: {
                 family: "'Quicksand', sans-serif"
             }
         },
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
     }
 };
 
-const TotalAmountChart = ({ labels, values, showYearly }) => {
+const ProfitChart = ({ labels, values, showYearly }) => {
 
-    console.log("chart")
-
-    const totalValueData = [values[0]];
+    const profitValues = [0];
     const chartLabels = [labels[0]];
     const period = showYearly ? 4 : 1;
 
     for (let i = period; i < values.length; i += period) {
         chartLabels.push(labels[i]);
-        totalValueData.push(values[i]);
+        profitValues.push(values[i] - values[i - period]);
     }
 
     const chartData = {
         labels: chartLabels,
         datasets: [
             {
-                label: 'Valor total',
-                data: totalValueData,
+                label: `Juro ${showYearly ? 'anual' : 'trimestral'}`,
+                data: profitValues,
                 borderColor: '#DC965A',
                 backgroundColor: '#DC965A',
             }
@@ -69,9 +70,9 @@ const TotalAmountChart = ({ labels, values, showYearly }) => {
         <div className='totalValueChart' style={{
             position: "relative", height: "40vh", width: "80%"
         }}>
-            <Line options={options} data={chartData} />
+            <Bar options={options} data={chartData} />
         </div >
     );
 }
 
-export default TotalAmountChart;
+export default ProfitChart;

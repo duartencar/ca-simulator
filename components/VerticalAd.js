@@ -1,4 +1,8 @@
-function VerticalAd() {
+function VerticalAd({ isMobile }) {
+
+    if (isMobile) {
+        return <></>
+    }
     return (
         <ins className="adsbygoogle"
             style={{ display: 'block' }}
@@ -6,7 +10,7 @@ function VerticalAd() {
             data-ad-slot="2310589751"
             data-ad-format="auto"
             data-adtest="on"
-        // data-full-width-responsive="true"
+            data-full-width-responsive="true"
         />
     );
 }
