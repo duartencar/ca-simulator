@@ -1,7 +1,7 @@
 export const MONTHS = ['jan', 'feb', 'mar', 'abr', 'mai', 'jun', 'jul', 'aug', 'set', 'out', 'nov', 'dez'];
 export const TIMESTERS_IN_TEN_YEARS = 40;
-export const TWO_TO_FIVE_YEARS_BONUS = 0.5;
-export const SIX_TO_TEN_YEARS_BONUS = 1.0;
+export const TWO_TO_FIVE_YEARS_BONUS = 0.5000;
+export const SIX_TO_TEN_YEARS_BONUS = 1.0000;
 export const TAX = 28;
 
 
@@ -37,16 +37,16 @@ export const calculateTotalValue = (initialAmount, euriborRate) => {
     const values = [initialAmount];
 
     for (let trim = 1; trim <= TIMESTERS_IN_TEN_YEARS; trim++) {
-        let rate = euriborRate < 0 ? Math.max(0.0, euriborRate + 1.0) : Math.min(3.5, euriborRate + 1);
+        let rate = euriborRate < 0 ? Math.max(0.0000, euriborRate + 1.0000) : Math.min(3.5000, euriborRate + 1.0000);
 
-        if (trim > 4 && trim < 20) {
+        if (trim > 4 && trim <= 20) {
             rate += TWO_TO_FIVE_YEARS_BONUS;
         }
-        if (trim >= 20) {
+        if (trim > 20) {
             rate += SIX_TO_TEN_YEARS_BONUS;
         }
 
-        const grossPofit = values[values.length - 1] * rate / 100 / 4;
+        const grossPofit = values[values.length - 1] * rate / 100.0 / 4.0;
 
         const netProfit = grossPofit * ((100 - TAX) / 100);
 
