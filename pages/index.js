@@ -4,7 +4,6 @@ import ProfitChart from '../components/ProfitChart';
 import PageTitle from '../components/PageTitle';
 
 import styles from './index.module.css'
-import VerticalAd from '../components/VerticalAd';
 import { generateLabels, calculateTotalValue } from '../logic/interest';
 
 export default function Home() {
@@ -68,7 +67,7 @@ export default function Home() {
 	return (
 		<div className={styles.homePage}>
 			<div className={styles.pub}>
-				<VerticalAd isMobile={isMobile} />
+				{/* <VerticalAd isMobile={isMobile} /> */}
 			</div>
 			<div className='content'>
 				<div className={styles.PageTitle} >
@@ -104,7 +103,7 @@ export default function Home() {
 				</div>
 			</div>
 			<div className={styles.pub}>
-				<VerticalAd isMobile={isMobile} />
+				{/* <VerticalAd isMobile={isMobile} /> */}
 			</div>
 		</div >
 	)
