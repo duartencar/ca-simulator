@@ -42,8 +42,6 @@ const options = {
 
 const TotalAmountChart = ({ labels, values, showYearly }) => {
 
-    console.log("chart")
-
     const totalValueData = [values[0]];
     const chartLabels = [labels[0]];
     const period = showYearly ? 4 : 1;
@@ -59,8 +57,8 @@ const TotalAmountChart = ({ labels, values, showYearly }) => {
             {
                 label: 'Valor total',
                 data: totalValueData,
-                borderColor: '#DC965A',
-                backgroundColor: '#DC965A',
+                borderColor: '#468847',
+                backgroundColor: '#468847',
             }
         ]
     }

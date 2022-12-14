@@ -1,0 +1,39 @@
+.statsWrapper {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2.5% 0;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.stat {
+    width: 45%;
+    aspect-ratio: 1 / 1;
+    background-color: #E6E8E6;
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+}
+
+.statValue {
+    align-self: center;
+    align-items: center;
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    color: #468847;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 768px) {
+    .statsWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .stat {
+        width: 100%;
+    }
+}

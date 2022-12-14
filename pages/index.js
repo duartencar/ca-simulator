@@ -2,13 +2,12 @@ import { useState, useMemo, useEffect } from 'react';
 import TotalAmountChart from '../components/TotalAmountChart';
 import ProfitChart from '../components/ProfitChart';
 import PageTitle from '../components/PageTitle';
+import MainStats from '../components/MainStats/MainStats';
 
 import styles from './index.module.css'
 import { generateLabels, calculateTotalValue } from '../logic/interest';
 
 export default function Home() {
-
-	console.log("Render");
 
 	// UI controls
 	const [startingDate, setDate] = useState(new Date().toISOString().slice(0, 10))
@@ -75,6 +74,7 @@ export default function Home() {
 				</div>
 				<div className={styles.interactive}>
 					<div className={styles.displayArea}>
+						{useMemo(() => <MainStats values={totalCapital} />, [totalCapital])}
 						<TotalAmountChart labels={labels} values={totalCapital} showYearly={displayAnnually} />
 						<ProfitChart labels={labels} values={totalCapital} showYearly={displayAnnually} />
 					</div>

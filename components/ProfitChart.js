@@ -60,8 +60,8 @@ const ProfitChart = ({ labels, values, showYearly }) => {
             {
                 label: `Juro ${showYearly ? 'anual' : 'trimestral'}`,
                 data: profitValues,
-                borderColor: '#DC965A',
-                backgroundColor: '#DC965A',
+                borderColor: '#468847',
+                backgroundColor: '#468847',
             }
         ]
     }
