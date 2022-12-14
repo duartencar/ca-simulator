@@ -18,9 +18,10 @@
 }
 
 .interactive {
-    display: grid;
-    grid-template-columns: 10fr 2fr;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
     width: 100%;
 }
 
@@ -28,9 +29,17 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     row-gap: 2rem;
+}
+
+.hero {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .inputArea {
@@ -58,6 +67,7 @@
     align-items: center;
     justify-content: space-around;
     font-size: 0.9rem;
+    min-width: 170px;
 }
 
 .switch {
@@ -119,6 +129,7 @@ input:checked+.slider:before {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        grid-template-columns: 2fr 8fr 2fr;
     }
 
     .interactive {
@@ -127,12 +138,28 @@ input:checked+.slider:before {
         align-items: center;
     }
 
+    .hero {
+        flex-direction: column;
+        width: 80%;
+    }
+
     .PageTitle {
         font-size: 12px;
     }
 
     .inputArea {
         margin: 2rem 0;
+        padding-top: 0;
         justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .homePage {
+        grid-template-columns: 1fr 10fr 1fr;
+    }
+
+    .hero {
+        width: 100%;
     }
 }

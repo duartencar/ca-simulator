@@ -1,7 +1,7 @@
 const PageTitle = () => {
     return (
         <div className="Title">
-            <h1>Simulador de certificado de aforro</h1>
+            <h1>Simular certificado de aforro</h1>
         </div>
     );
 };

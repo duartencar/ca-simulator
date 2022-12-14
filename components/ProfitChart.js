@@ -22,17 +22,11 @@ const options = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-        legend: {
-            position: 'top',
-            font: {
-                family: "'Quicksand', sans-serif"
-            }
-        },
         title: {
             display: true,
             text: 'Evolução dos Juros',
             font: {
-                family: "'Quicksand', sans-serif"
+                family: "'Montserrat', sans-serif"
             }
         },
         scales: {
@@ -43,7 +37,7 @@ const options = {
     }
 };
 
-const ProfitChart = ({ labels, values, showYearly }) => {
+const ProfitChart = ({ labels, values, showYearly, isSmallMobile }) => {
 
     const profitValues = [0];
     const chartLabels = [labels[0]];
@@ -66,9 +60,11 @@ const ProfitChart = ({ labels, values, showYearly }) => {
         ]
     }
 
+    const chartWidth = isSmallMobile ? "100%" : "80%";
+
     return (
         <div className='totalValueChart' style={{
-            position: "relative", height: "40vh", width: "80%"
+            position: "relative", height: "40vh", width: chartWidth
         }}>
             <Bar options={options} data={chartData} />
         </div >

@@ -27,20 +27,20 @@ const options = {
         legend: {
             position: 'top',
             font: {
-                family: "'Quicksand', sans-serif"
+                family: "'Montserrat', sans-serif"
             }
         },
         title: {
             display: true,
             text: 'Evolução do valor total',
             font: {
-                family: "'Quicksand', sans-serif"
+                family: "'Montserrat', sans-serif"
             }
         },
     }
 };
 
-const TotalAmountChart = ({ labels, values, showYearly }) => {
+const TotalAmountChart = ({ labels, values, showYearly, isSmallMobile }) => {
 
     const totalValueData = [values[0]];
     const chartLabels = [labels[0]];
@@ -63,9 +63,11 @@ const TotalAmountChart = ({ labels, values, showYearly }) => {
         ]
     }
 
+    const chartWidth = isSmallMobile ? "100%" : "80%";
+
     return (
         <div className='totalValueChart' style={{
-            position: "relative", height: "40vh", width: "80%"
+            position: "relative", height: "40vh", width: chartWidth
         }}>
             <Line options={options} data={chartData} />
         </div >

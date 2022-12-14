@@ -24,7 +24,7 @@ export default function Home() {
 
 
 	function handleWindowSizeChange() {
-		setIsMobile(window.innerWidth <= 768);
+		setIsMobile(window.innerWidth <= 375);
 	}
 
 	useEffect(() => {
@@ -74,23 +74,6 @@ export default function Home() {
 				</div>
 				<div className={styles.interactive}>
 					<div className={styles.displayArea}>
-						{useMemo(() => <MainStats values={totalCapital} />, [totalCapital])}
-						<TotalAmountChart labels={labels} values={totalCapital} showYearly={displayAnnually} />
-						<ProfitChart labels={labels} values={totalCapital} showYearly={displayAnnually} />
-					</div>
-					<div className={styles.inputArea}>
-						<div className={styles.simInput}>
-							<label>Número de unidades:</label>
-							<input type="number" name="Número de unidades" min='100' max='250000' placeholder='Múltiplo de 100' step='100' value={startingValue} onChange={(e) => onStartingValueChange(e)} required />
-						</div>
-						<div className={styles.simInput}>
-							<label>Taxa Euribor 3 meses:</label>
-							<input type="number" name="Euribor" min='-0.50' max='5.00' placeholder='Taxa euribor inicial' step='0.01' value={startingEuriborRate} onChange={(e) => onEuriborValueChange(e)} required />
-						</div>
-						<div className={styles.simInput}>
-							<label>Data de subscrição:</label>
-							<input type="date" name="Start date" min="2017-10-01" max="2025-10-30" value={startingDate} onChange={(e) => onDateChange(e)} />
-						</div>
 						<div className={styles.timeFrameControl}>
 							<label>Trimestral</label>
 							<label className={styles.switch}>
@@ -99,7 +82,27 @@ export default function Home() {
 							</label>
 							<label>Anual</label>
 						</div>
+						<TotalAmountChart labels={labels} values={totalCapital} showYearly={displayAnnually} isSmallMobile={isMobile} />
+						<ProfitChart labels={labels} values={totalCapital} showYearly={displayAnnually} isSmallMobile={isMobile} />
 					</div>
+					<div className={styles.hero}>
+						<div className={styles.inputArea}>
+							<div className={styles.simInput}>
+								<label>Número de unidades:</label>
+								<input type="number" name="Número de unidades" min='100' max='250000' placeholder='Múltiplo de 100' step='100' value={startingValue} onChange={(e) => onStartingValueChange(e)} required />
+							</div>
+							<div className={styles.simInput}>
+								<label>Taxa Euribor 3 meses:</label>
+								<input type="number" name="Euribor" min='-0.50' max='5.00' placeholder='Taxa euribor inicial' step='0.01' value={startingEuriborRate} onChange={(e) => onEuriborValueChange(e)} required />
+							</div>
+							<div className={styles.simInput}>
+								<label>Data de subscrição:</label>
+								<input type="date" name="Start date" min="2017-10-01" max="2025-10-30" value={startingDate} onChange={(e) => onDateChange(e)} />
+							</div>
+						</div>
+						{useMemo(() => <MainStats values={totalCapital} />, [totalCapital])}
+					</div>
+
 				</div>
 			</div>
 			<div className={styles.pub}>

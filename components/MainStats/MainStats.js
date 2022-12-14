@@ -4,7 +4,6 @@ function MainStats({ values }) {
 
     const finalCapital = values[values.length - 1];
     const profit = Math.round(((values[values.length - 1] - values[0]) / values[0] * 100 + Number.EPSILON) * 100) / 100;
-    // Math.round((newValue + Number.EPSILON) * 100) / 100)
 
     return (
         <div className={styles.statsWrapper}>
