@@ -13,8 +13,7 @@ function MyApp({ Component, pageProps }) {
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
                 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3931171896983486"
-                    crossOrigin="anonymous"></script>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3931171896983486"></script>
                 {/*
                  <link rel="icon" type="image/png" href="favicon.png"/>
                 <meta property="og:title" content='Impac&apos;tu' />
