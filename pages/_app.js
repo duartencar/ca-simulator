@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Simular CA" />
                 <meta name="twitter:description" content="Simula a rentabilidade do teu aforro!" />
-                <meta name="twitter:image" content="icon.jpeg" />
+                <meta name="twitter:image" content="https://i.ibb.co/yhgQrQ4/icon.jpg" />
             </Head>
             <Component pageProps={pageProps} />
             <Analytics />
